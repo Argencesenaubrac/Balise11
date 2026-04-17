@@ -48,7 +48,6 @@ h1 {
     cursor: pointer;
     background: #2f3e4e;
     color: white;
-    transition: 0.3s;
 }
 
 .choice:hover {
@@ -72,11 +71,11 @@ h1 {
     border-left: 5px solid #c62828;
 }
 
-/* Image */
+/* Image fiable */
 #imgSuccess {
-    display: none;
+    visibility: hidden;
     margin-top: 15px;
-    max-width: 250px;
+    max-width: 200px;
 }
 </style>
 </head>
@@ -117,13 +116,13 @@ h1 {
 function correctAnswer() {
     document.getElementById("success").style.display = "block";
     document.getElementById("error").style.display = "none";
-    document.getElementById("imgSuccess").style.display = "block";
+    document.getElementById("imgSuccess").style.visibility = "visible";
 }
 
 function wrongAnswer() {
     document.getElementById("error").style.display = "block";
     document.getElementById("success").style.display = "none";
-    document.getElementById("imgSuccess").style.display = "none";
+    document.getElementById("imgSuccess").style.visibility = "hidden";
 }
 </script>
 
