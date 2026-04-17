@@ -26,20 +26,17 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* Texte narratif */
 .story {
     font-style: italic;
     margin-bottom: 20px;
     color: #5a6b7a;
 }
 
-/* Question */
 h1 {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-/* Boutons réponses */
 .choice {
     display: block;
     width: 100%;
@@ -58,7 +55,6 @@ h1 {
     background: #1f2a35;
 }
 
-/* Messages */
 .success, .error {
     display: none;
     margin-top: 20px;
@@ -76,13 +72,11 @@ h1 {
     border-left: 5px solid #c62828;
 }
 
-/* Animation douce pour l'image */
+/* Image */
 #imgSuccess {
     display: none;
     margin-top: 15px;
-    max-width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    max-width: 250px;
 }
 </style>
 </head>
@@ -90,7 +84,6 @@ h1 {
 <body>
 
 <div class="container">
-
     <div class="card">
 
         <p class="story">
@@ -109,8 +102,8 @@ h1 {
         <div id="success" class="success">
             ✅ Bonne réponse !<br>
             L’ancre représente l’espérance.<br>
-           <img id="imgSuccess"
-     src="https://raw.githubusercontent.com/Argencesenaubrac/Balise11/main/Vitrailancre.png">
+            <img id="imgSuccess"
+                 src="https://raw.githubusercontent.com/Argencesenaubrac/Balise11/main/Vitrailancre.png">
         </div>
 
         <div id="error" class="error">
@@ -118,30 +111,19 @@ h1 {
         </div>
 
     </div>
-
 </div>
 
 <script>
 function correctAnswer() {
     document.getElementById("success").style.display = "block";
     document.getElementById("error").style.display = "none";
-
-    let img = document.getElementById("imgSuccess");
-    img.style.display = "block";
-
-    // petit délai pour déclencher l'animation
-    setTimeout(() => {
-        img.style.opacity = "1";
-    }, 50);
+    document.getElementById("imgSuccess").style.display = "block";
 }
 
 function wrongAnswer() {
     document.getElementById("error").style.display = "block";
     document.getElementById("success").style.display = "none";
-
-    let img = document.getElementById("imgSuccess");
-    img.style.display = "none";
-    img.style.opacity = "0";
+    document.getElementById("imgSuccess").style.display = "none";
 }
 </script>
 
